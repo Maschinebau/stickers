@@ -1,0 +1,64 @@
+.stickers-list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, clamp(104px, 15vw, 120px));
+  grid-template-rows: repeat(auto-fit, 118px);
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+  height: 244px;
+  transition: height 1.4s cubic-bezier(0.5, 0, 0.5, 1);
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 113px;
+    height: 118px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    text-wrap: nowrap;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 120px;
+  }
+}
+
+.stickers-list_opened {
+  height: 1000px;
+  max-height: none;
+
+  @media screen and (min-width: 472px) {
+    height: 750px;
+  }
+
+  @media screen and (min-width: 584px) {
+    height: 630px;
+  }
+
+  @media screen and (min-width: 719px) {
+    height: 500px;
+  }
+
+  @media screen and (min-width: 1048px) {
+    height: 380px;
+  }
+}

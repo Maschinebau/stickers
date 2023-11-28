@@ -1,0 +1,36 @@
+@import 'fonts';
+@import './components/swiper';
+@import './components/stickers';
+@import './components/swiper-slide';
+@import './components/stickers-list';
+@import '../utils/normalize';
+
+
+body, p, h1, h2, h3, ul, ol, li, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  font-family: "GolosText", sans-serif;
+}
+
+.main {
+  min-width: 360px;
+  max-width: 1380px;
+  padding: 64px 16px 37px 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    padding: 64px 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 56px 114px;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+.stickers {
+  padding-top: 56px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+
+  &__dropdown-icon {
+    background-image: url(../assets/img/dropdownArrow.svg);
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+
+    &_opened {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown-text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__dropdown-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 62px;
+  }
+}
