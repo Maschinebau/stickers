@@ -1,9 +1,10 @@
 const path = require("path")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -13,12 +14,8 @@ module.exports = {
     rules: [
       {
         test: /\.(css|scss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
-        ],
-      },
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+      }
     ]
   },
   plugins: [
@@ -27,6 +24,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./index.html"
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "./assets/img", to: "assets/img" }]
     })
   ],
   devServer: {

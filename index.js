@@ -42,9 +42,12 @@ const stickersItems = document.querySelectorAll(".stickers-list__item")
 stickersItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     swiper.slideTo(index + 1)
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   })
 })
-
 // ВЫПАДАЮЩЕЕ МЕНЮ
 
 const dropdownContainer = document.querySelector(".stickers__dropdown-container")
