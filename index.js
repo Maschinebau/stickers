@@ -48,6 +48,7 @@ stickersItems.forEach((item, index) => {
     })
   })
 })
+
 // ВЫПАДАЮЩЕЕ МЕНЮ
 
 const dropdownContainer = document.querySelector(".stickers__dropdown-container")
