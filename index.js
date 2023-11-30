@@ -106,17 +106,24 @@ const swiper = new Swiper(".swiper", {
     slideChange: function () {
       const activeIndex = this.activeIndex
       const lastSlideIndex = stickers.length - 1
-      const slideIndex = activeIndex <= lastSlideIndex ? activeIndex : lastSlideIndex
-      const activeSlide = stickers[slideIndex]
-      const prevSlideIndex = slideIndex - 1 >= 0 ? slideIndex - 1 : lastSlideIndex
-      const prevSlide = stickers[prevSlideIndex]
+      let activeSlideIndex
+
+      if (activeIndex === 0) {
+        activeSlideIndex = lastSlideIndex
+      } else if (activeIndex >= lastSlideIndex + 2) {
+        activeSlideIndex = 0
+      } else {
+        activeSlideIndex = activeIndex - 1
+      }
+
+      const activeSlide = stickers[activeSlideIndex]
 
       titleElement.classList.add("text-slide-out")
       subtitleElement.classList.add("text-slide-out")
 
       setTimeout(() => {
-        titleElement.textContent = prevSlide.title
-        subtitleElement.textContent = prevSlide.subtitle
+        titleElement.textContent = activeSlide.title
+        subtitleElement.textContent = activeSlide.subtitle
         titleElement.classList.add("text-slide-in")
         subtitleElement.classList.add("text-slide-in")
         setTimeout(() => {

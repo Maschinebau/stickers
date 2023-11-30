@@ -36,5 +36,8 @@ module.exports = {
   },
   resolve: {
     modules: ["node_modules"]
+  },
+  performance: {
+    hints: false
   }
 }

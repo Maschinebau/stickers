@@ -8,15 +8,11 @@
 
   <body class="body">
     <main class="main">
-
       <!-- слайдер -->
 
       <section class="slider">
         <div class="swiper">
-          <div class="swiper-wrapper">
-
-          </div>
-
+          <ul class="swiper-wrapper"></ul>
         </div>
         <div class="swiper__text-container">
           <h1 class="swiper__title"></h1>
@@ -29,9 +25,7 @@
       <!-- список стикерсов -->
 
       <section class="stickers">
-        <ul class="stickers-list">
-
-        </ul>
+        <ul class="stickers-list"></ul>
         <div class="stickers__dropdown-container">
           <div class="stickers__dropdown-icon"></div>
           <p class="stickers__dropdown-text">Посмотреть все Стикерсы</p>
@@ -42,18 +36,18 @@
     <!-- шаблон слайда -->
 
     <template id="slide-template">
-      <div class="swiper-slide">
+      <li class="swiper-slide">
         <div class="swiper-slide__img-container">
-          <img class="swiper-slide__img" src="" alt="">
+          <img class="swiper-slide__img" src="" alt="" loading="lazy" />
         </div>
-      </div>
+      </li>
     </template>
 
     <!-- шаблон стикерса из списка -->
 
     <template id="stickers-template">
       <li class="stickers-list__item">
-        <img class="stickers-list__img" src="" alt="">
+        <img class="stickers-list__img" src="" alt="" loading="lazy" />
         <p class="stickers-list__title"></p>
       </li>
     </template>
